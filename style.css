@@ -24,7 +24,6 @@ body {
 .header > img {
   width: 386px;
 }
-
 .vending-machine,
 .container-mypage {
   width: 360px;
@@ -32,24 +31,23 @@ body {
   box-sizing: border-box;
 }
 
+/* 메인 레이아웃 */
 .main {
   margin: 0 auto;
   width: 748px;
 }
-
 .main::after {
   content: "";
   display: block;
   clear: both;
 }
-
-
 .main .vending-machine {
   float: left;
   padding: 28px 24px;
   margin-right: 28px;
   background-color: white;
 }
+
 .menu button {
   box-sizing: border-box;
   width: 94px;
@@ -72,12 +70,10 @@ body {
 .menu li:nth-of-type(3n-1) {
   margin: 0 12px;
 } 
-
 .menu button img {
   width: 36px;
   height: 65px;
 }
-
 .menu-name {
   font-family: "Noto Sans KR";
   font-style: normal;
@@ -86,7 +82,6 @@ body {
   line-height: 13px;
   margin: 7px auto;
 }
-
 .menu-price {
   width: 70px;
   height: 22px;
@@ -133,7 +128,7 @@ body {
   margin-top: 6px;
 }
 .cola-cart {
-  overflow-y: auto;
+  overflow-y: scroll;
   height: 106px;
   padding: 12px;
   border: 1px solid #BDBDBD;
@@ -182,13 +177,10 @@ body {
   background: #6327FE;
   color: #fff;
 }
-
-
 .main .container-mypage {
   float: left;
   background-color: #EAE8FE;
 }
-
 .mypage-my-money, .mypage-my-bag {
   padding: 9px 27px;
 }
@@ -207,11 +199,11 @@ body {
 }
 .my-pocket-money {
   font-family: 'Noto Sans KR';
-font-style: normal;
-font-weight: 700;
-font-size: 14px;
-line-height: 20px;
-float: right;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+  float: right;
 }
 .my-money-box, .my-bag-contents {
   box-sizing: border-box;
@@ -224,13 +216,20 @@ float: right;
 .my-money-box {
   padding: 6px 10px;
 }
+.left-money-text{
+  float: left;
+}
+.left-money-money {
+  float: right; 
+}
+
 .mypage-my-bag {
   box-sizing: border-box;
-  /* height: 475px; */
   background-color: white;
   float: left;
   padding-top: 25px;
   padding-bottom: 30px;
+  text-align: center;
 }
 .mypage-my-bag h2 {
   font-family: 'Noto Sans KR';
@@ -238,27 +237,26 @@ float: right;
   font-size: 14px;
   line-height: 20px;
 }
+
 .my-bag-contents {
-  font-family: 'Noto Sans KR';
   height: 364px;
   margin-top: 13px;
   border: 1px solid #BDBDBD;
   padding: 12px;
+  overflow-y: scroll;
 }
-.total-money {
-  float: right;
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 17px;
-  margin-top: 6px;
+.my-bag-contents::-webkit-scrollbar {
+  width: 8px;
 }
-.left-money-text{
-  float: left;
+.my-bag-contents::-webkit-scrollbar-thumb {
+  width: 4px;
+  height: 79px;
+  border-right: 4px solid #EAE8FE ; 
+  border-radius: 50px;
+  background-color: #FFFFFF;
 }
-.left-money-money {
-  float: right; 
+.my-bag-contents::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 .picked-cola {
@@ -279,10 +277,20 @@ float: right;
 .picked-cola-img {
   width: 18px;
   height: 33px;
-  margin-top: 5px;
+  margin-top: 7px;
   float: left;
 }
-.drinks-quantity {
+.picked-cola-name {
+  float: left;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 13px;
+  margin-top: 18px;
+  margin-left: 10px;
+}
+.cola-quantity {
   float: right;
   padding: 4px 11px 6px;
   border: 1px solid #BDBDBD;
@@ -296,13 +304,13 @@ float: right;
   font-size: 14px;
   line-height: 20px;
 }
-.selected-drinks {
-  float: left;
+
+.total-money {
+  float: right;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 500;
-  font-size: 9px;
-  line-height: 13px;
-  margin-top: 18px;
-  margin-left: 10px;
+  font-size: 12px;
+  line-height: 17px;
+  margin-top: 6px;
 }
