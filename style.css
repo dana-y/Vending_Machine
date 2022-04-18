@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+.blind {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+button {
+  background-color: #fff;
+  border: none;
+}
+/* 레이아웃 */
+body {
+  background-color: #eae8fe;
+}
+/* 헤더 레이아웃 */
+.header {
+  text-align: center;
+  margin-bottom: 67px;
+}
+.header > img {
+  width: 386px;
+}
+
+.vending-machine,
+.container-mypage {
+  width: 360px;
+  height: 545px;
+  box-sizing: border-box;
+}
+
+.main {
+  margin: 0 auto;
+  width: 748px;
+}
+
+.main::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.main .vending-machine {
+  float: left;
+  padding: 28px 24px;
+  margin-right: 28px;
+  background-color: white;
+}
+.menu button {
+  box-sizing: border-box;
+  width: 94px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
+  float: left;
+  margin-bottom: 12px;
+  background: #FFFFFF;
+  padding-top: 11px;
+  padding-bottom: 9px;
+}
+.menu button:hover {
+  outline: 3px solid #6327FE;
+  border-radius: 10px;
+}
+.menu li{
+  float: left;
+}
+.menu li:nth-of-type(3n-1) {
+  margin: 0 12px;
+} 
+
+.menu button img {
+  width: 36px;
+  height: 65px;
+}
+
+.menu-name {
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 13px;
+  margin: 7px auto;
+}
+
+.menu-price {
+  width: 70px;
+  height: 22px;
+  box-sizing: border-box;
+  background: #6327FE;
+  border-radius: 50px;
+  color: #fff;
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Noto Sans KR';
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.left {
+  width: 200px;
+  float: left;
+  font-family: 'Noto Sans KR';
+}
+.left-money, .input-money-text, .cola-cart {
+  box-sizing: border-box;
+  width: 200px;
+  height: 33px;
+  vertical-align: middle;
+  border-radius: 5px;
+  margin-bottom: 11px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 19px;
+}
+.left-money, .cola-cart {
+  background: #EAE8FE;
+}
+.left-money {
+  padding: 0 10px 0;
+}
+.input-money-text{
+  padding-left: 6px;
+  border: 1px solid #BDBDBD;
+}
+.left-money span {
+  margin-top: 6px;
+}
+.cola-cart {
+  overflow-y: auto;
+  height: 106px;
+  padding: 12px;
+  border: 1px solid #BDBDBD;
+}
+.cola-cart::-webkit-scrollbar {
+  width: 8px;
+}
+.cola-cart::-webkit-scrollbar-thumb {
+  width: 4px;
+  height: 79px;
+  border-right: 4px solid #EAE8FE ; 
+  border-radius: 50px;
+  background-color: #FFFFFF;
+}
+.cola-cart::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.right {
+  width: 94px;
+  height: 32px;
+  float: right;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Noto Sans KR';
+}
+.change-return, .input-money-button, .get {  
+  box-sizing: border-box;
+  width: 94px;
+  border-radius: 5px;
+  margin-bottom: 11px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+}
+.change-return, .input-money-button {
+  height: 33px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #000;
+}
+.get {
+  height: 106px;
+  background: #6327FE;
+  color: #fff;
+}
+
+
+.main .container-mypage {
+  float: left;
+  background-color: #EAE8FE;
+}
+
+.mypage-my-money, .mypage-my-bag {
+  padding: 9px 27px;
+}
+.main .mypage-my-money {
+  background-color: white;
+  float: left;
+  margin-bottom:  20px;
+}
+.my-pocket-money-text {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  float: left;
+}
+.my-pocket-money {
+  font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 20px;
+float: right;
+}
+.my-money-box, .my-bag-contents {
+  box-sizing: border-box;
+  width: 306px;
+  margin: 0 auto;
+  background: #EAE8FE;
+  border-radius: 5px;
+  float: left;
+}
+.my-money-box {
+  padding: 6px 10px;
+}
+.mypage-my-bag {
+  box-sizing: border-box;
+  /* height: 475px; */
+  background-color: white;
+  float: left;
+  padding-top: 25px;
+  padding-bottom: 30px;
+}
+.mypage-my-bag h2 {
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 20px;
+}
+.my-bag-contents {
+  font-family: 'Noto Sans KR';
+  height: 364px;
+  margin-top: 13px;
+  border: 1px solid #BDBDBD;
+  padding: 12px;
+}
+.total-money {
+  float: right;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 17px;
+  margin-top: 6px;
+}
+.left-money-text{
+  float: left;
+}
+.left-money-money {
+  float: right; 
+}
+
+.picked-cola {
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  background-color: #fff;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 13px;
+  text-align: left;
+  padding-left: 10px;
+  margin-bottom: 6px;
+  border-radius: 5px;
+}
+.picked-cola-img {
+  width: 18px;
+  height: 33px;
+  margin-top: 5px;
+  float: left;
+}
+.drinks-quantity {
+  float: right;
+  padding: 4px 11px 6px;
+  border: 1px solid #BDBDBD;
+  box-sizing: border-box;
+  border-radius: 5px;
+  text-align: center;
+  margin: 8px;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+.selected-drinks {
+  float: left;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 13px;
+  margin-top: 18px;
+  margin-left: 10px;
+}
