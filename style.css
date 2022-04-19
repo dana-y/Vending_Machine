@@ -27,13 +27,21 @@ body {
 .vending-machine,
 .container-mypage {
   width: 360px;
-  height: 545px;
+  /* height: 545px; */
   box-sizing: border-box;
 }
 
+/* 품절 레이아웃 */
+.soldout {
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+}
 /* 메인 레이아웃 */
 .main {
-  margin: 0 auto;
+  margin: 0 auto 100px;
   width: 748px;
 }
 .main::after {
@@ -42,21 +50,25 @@ body {
   clear: both;
 }
 .main .vending-machine {
+  width: 360px;
   float: left;
-  padding: 28px 24px;
+  padding: 28px 27px;
   margin-right: 28px;
   background-color: white;
 }
 
+.menu {
+  float: left;
+  margin-bottom: 20px;
+}
 .menu button {
+  position: relative;
+  float: left;
   box-sizing: border-box;
   width: 94px;
-  border: none;
+  height: 130px;
   border-radius: 10px;
-  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
-  float: left;
-  margin-bottom: 12px;
-  background: #FFFFFF;
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
   padding-top: 11px;
   padding-bottom: 9px;
 }
@@ -67,10 +79,13 @@ body {
 .menu li{
   float: left;
 }
-.menu li:nth-of-type(3n-1) {
+.menu li:nth-of-type(3n+2) {
   margin: 0 12px;
 } 
-.menu button img {
+.menu li:nth-child(n+4) {
+  margin-top: 12px;
+}
+.menu-items {
   width: 36px;
   height: 65px;
 }
@@ -80,7 +95,7 @@ body {
   font-weight: 500;
   font-size: 9px;
   line-height: 13px;
-  margin: 7px auto;
+  margin: 2px auto 7px;
 }
 .menu-price {
   width: 70px;
@@ -96,23 +111,25 @@ body {
   font-size: 12px;
 }
 
-.left {
-  width: 200px;
-  float: left;
-  font-family: 'Noto Sans KR';
+.vending-machine-bottom-side div+div {
+  margin-top: 12px;
 }
-.left-money, .input-money-text, .cola-cart {
-  box-sizing: border-box;
+.now-money, .input-money-box, .my-picked-cola-cart {
+  float: left;
+}
+
+.left {
+  float: left;
   width: 200px;
   height: 33px;
   vertical-align: middle;
   border-radius: 5px;
-  margin-bottom: 11px;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
   line-height: 19px;
+  box-sizing: border-box;
 }
 .left-money, .cola-cart {
   background: #EAE8FE;
@@ -123,6 +140,7 @@ body {
 .input-money-text{
   padding-left: 6px;
   border: 1px solid #BDBDBD;
+  color: #BDBDBD;
 }
 .left-money span {
   margin-top: 6px;
@@ -133,6 +151,8 @@ body {
   padding: 12px;
   border: 1px solid #BDBDBD;
 }
+
+/* colacart 스크롤 디자인 */
 .cola-cart::-webkit-scrollbar {
   width: 8px;
 }
@@ -150,16 +170,12 @@ body {
 .right {
   width: 94px;
   height: 32px;
-  float: right;
+  float: left;
+  margin-left: 12px;
   text-align: center;
   vertical-align: middle;
-  font-family: 'Noto Sans KR';
-}
-.change-return, .input-money-button, .get {  
   box-sizing: border-box;
-  width: 94px;
   border-radius: 5px;
-  margin-bottom: 11px;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-size: 13px;
@@ -167,9 +183,10 @@ body {
   line-height: 20px;
 }
 .change-return, .input-money-button {
-  height: 33px;
+  /* height: 33px; */
   background: #FFFFFF;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+  border-radius: 5px;
   color: #000;
 }
 .get {
@@ -187,7 +204,7 @@ body {
 .main .mypage-my-money {
   background-color: white;
   float: left;
-  margin-bottom:  20px;
+  margin-bottom: 20px;
 }
 .my-pocket-money-text {
   font-family: 'Noto Sans KR';
