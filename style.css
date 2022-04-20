@@ -40,16 +40,16 @@ body {
   z-index: 1;
 }
 /* 메인 레이아웃 */
-.main {
+.container {
   margin: 0 auto 100px;
   width: 748px;
 }
-.main::after {
+.container::after {
   content: "";
   display: block;
   clear: both;
 }
-.main .vending-machine {
+.container .vending-machine {
   width: 360px;
   float: left;
   padding: 28px 27px;
@@ -194,14 +194,14 @@ body {
   background: #6327FE;
   color: #fff;
 }
-.main .container-mypage {
+.container .container-mypage {
   float: left;
   background-color: #EAE8FE;
 }
 .mypage-my-money, .mypage-my-bag {
   padding: 9px 27px;
 }
-.main .mypage-my-money {
+.container .mypage-my-money {
   background-color: white;
   float: left;
   margin-bottom: 20px;
