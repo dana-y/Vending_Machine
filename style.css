@@ -24,79 +24,71 @@ body {
 .header > img {
   width: 386px;
 }
+
 .vending-machine,
 .container-mypage {
   width: 360px;
-  /* height: 545px; */
+  height: 545px;
   box-sizing: border-box;
 }
 
-/* 품절 레이아웃 */
-.soldout {
-  width: 100%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  z-index: 1;
+.main {
+  text-align: center;
 }
-/* 메인 레이아웃 */
-.container {
-  margin: 0 auto 100px;
-  width: 748px;
-}
-.container::after {
+
+.main::after {
   content: "";
   display: block;
   clear: both;
 }
-.container .vending-machine {
-  width: 360px;
+
+.wrapper {
+  display: inline-block;
+}
+
+.main .vending-machine {
   float: left;
-  padding: 28px 27px;
+  padding: 28px 24px;
   margin-right: 28px;
   background-color: white;
 }
-
-.menu {
-  float: left;
-  margin-bottom: 20px;
-}
 .menu button {
-  position: relative;
-  float: left;
   box-sizing: border-box;
   width: 94px;
   height: 130px;
+  border: none;
   border-radius: 10px;
-  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.25);
+  float: left;
+  margin-bottom: 12px;
+  background: #FFFFFF;
   padding-top: 11px;
   padding-bottom: 9px;
 }
 .menu button:hover {
-  outline: 3px solid #6327FE;
+  border: 3px solid #6327FE;
   border-radius: 10px;
 }
 .menu li{
   float: left;
 }
-.menu li:nth-of-type(3n+2) {
+.menu li:nth-of-type(3n-1) {
   margin: 0 12px;
 } 
-.menu li:nth-child(n+4) {
-  margin-top: 12px;
-}
-.menu-items {
+
+.menu button img:nth-of-type(1) {
   width: 36px;
   height: 65px;
 }
-.menu-name {
+
+.menu button p:nth-of-type(1) {
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
   font-size: 9px;
   line-height: 13px;
-  margin: 2px auto 7px;
 }
+
 .menu-price {
   width: 70px;
   height: 22px;
@@ -109,27 +101,26 @@ body {
   font-family: 'Noto Sans KR';
   font-weight: 500;
   font-size: 12px;
+  margin-top: 7px;
 }
 
-.vending-machine-bottom-side div+div {
-  margin-top: 12px;
-}
-.now-money, .input-money-box, .my-picked-cola-cart {
+.left-side {
+  width: 200px;
   float: left;
+  font-family: 'Noto Sans KR';
 }
-
-.left {
-  float: left;
+.left-money, .input-money-text, .cola-cart {
+  box-sizing: border-box;
   width: 200px;
   height: 33px;
   vertical-align: middle;
   border-radius: 5px;
+  margin-bottom: 11px;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-weight: 500;
   font-size: 13px;
   line-height: 19px;
-  box-sizing: border-box;
 }
 .left-money, .cola-cart {
   background: #EAE8FE;
@@ -140,42 +131,20 @@ body {
 .input-money-text{
   padding-left: 6px;
   border: 1px solid #BDBDBD;
-  color: #BDBDBD;
 }
 .left-money span {
   margin-top: 6px;
 }
 .cola-cart {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 106px;
-  padding: 12px;
   border: 1px solid #BDBDBD;
 }
-
-/* colacart 스크롤 디자인 */
-.cola-cart::-webkit-scrollbar {
-  width: 8px;
-}
-.cola-cart::-webkit-scrollbar-thumb {
-  width: 4px;
-  height: 79px;
-  border-right: 4px solid #EAE8FE ; 
-  border-radius: 50px;
-  background-color: #FFFFFF;
-}
-.cola-cart::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-.right {
-  width: 94px;
-  height: 32px;
-  float: left;
-  margin-left: 12px;
-  text-align: center;
-  vertical-align: middle;
+.change-return, .input-money-button, .get {  
   box-sizing: border-box;
+  width: 94px;
   border-radius: 5px;
+  margin-bottom: 11px;
   font-family: 'Noto Sans KR';
   font-style: normal;
   font-size: 13px;
@@ -183,10 +152,9 @@ body {
   line-height: 20px;
 }
 .change-return, .input-money-button {
-  /* height: 33px; */
+  height: 33px;
   background: #FFFFFF;
-  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
-  border-radius: 5px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: #000;
 }
 .get {
@@ -194,17 +162,28 @@ body {
   background: #6327FE;
   color: #fff;
 }
-.container .container-mypage {
+.right-side {
+  width: 94px;
+  height: 32px;
+  float: right;
+  text-align: center;
+  vertical-align: middle;
+  font-family: 'Noto Sans KR';
+}
+
+
+.main .container-mypage {
   float: left;
   background-color: #EAE8FE;
 }
+
 .mypage-my-money, .mypage-my-bag {
   padding: 9px 27px;
 }
-.container .mypage-my-money {
+.main .mypage-my-money {
   background-color: white;
   float: left;
-  margin-bottom: 20px;
+  margin-bottom:  20px;
 }
 .my-pocket-money-text {
   font-family: 'Noto Sans KR';
@@ -216,11 +195,11 @@ body {
 }
 .my-pocket-money {
   font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 20px;
-  float: right;
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 20px;
+float: right;
 }
 .my-money-box, .my-bag-contents {
   box-sizing: border-box;
@@ -233,20 +212,12 @@ body {
 .my-money-box {
   padding: 6px 10px;
 }
-.left-money-text{
-  float: left;
-}
-.left-money-money {
-  float: right; 
-}
-
 .mypage-my-bag {
   box-sizing: border-box;
+  height: 475px;
   background-color: white;
   float: left;
   padding-top: 25px;
-  padding-bottom: 30px;
-  text-align: center;
 }
 .mypage-my-bag h2 {
   font-family: 'Noto Sans KR';
@@ -254,74 +225,13 @@ body {
   font-size: 14px;
   line-height: 20px;
 }
-
 .my-bag-contents {
+  font-family: 'Noto Sans KR';
   height: 364px;
   margin-top: 13px;
   border: 1px solid #BDBDBD;
   padding: 12px;
-  overflow-y: scroll;
 }
-.my-bag-contents::-webkit-scrollbar {
-  width: 8px;
-}
-.my-bag-contents::-webkit-scrollbar-thumb {
-  width: 4px;
-  height: 79px;
-  border-right: 4px solid #EAE8FE ; 
-  border-radius: 50px;
-  background-color: #FFFFFF;
-}
-.my-bag-contents::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-
-.picked-cola {
-  box-sizing: border-box;
-  display: block;
-  overflow: hidden;
-  background-color: #fff;
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 9px;
-  line-height: 13px;
-  text-align: left;
-  padding-left: 10px;
-  margin-bottom: 6px;
-  border-radius: 5px;
-}
-.picked-cola-img {
-  width: 18px;
-  height: 33px;
-  margin-top: 7px;
-  float: left;
-}
-.picked-cola-name {
-  float: left;
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 9px;
-  line-height: 13px;
-  margin-top: 18px;
-  margin-left: 10px;
-}
-.cola-quantity {
-  float: right;
-  padding: 4px 11px 6px;
-  border: 1px solid #BDBDBD;
-  box-sizing: border-box;
-  border-radius: 5px;
-  text-align: center;
-  margin: 8px;
-  font-family: 'Noto Sans KR';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
-}
-
 .total-money {
   float: right;
   font-family: 'Noto Sans KR';
@@ -330,4 +240,31 @@ body {
   font-size: 12px;
   line-height: 17px;
   margin-top: 6px;
+}
+.left-money-text{
+  float: left;
+}
+.left-money-money {
+  float: right; 
+}
+
+.picked-drinks-list li {
+  box-sizing: border-box;
+  height: 46px;
+  display: block;
+  background-color: #fff;
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 13px;
+  text-align: left;
+  padding-left: 10px;
+}
+.picked-drinks-list li:nth-child(n-1) {
+  margin-bottom: 6px;
+}
+.picked-drinks-list img {
+  width: 18px;
+  height: 33px;
 }
