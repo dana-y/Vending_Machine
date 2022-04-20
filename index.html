@@ -13,112 +13,75 @@
 <body>
     <header class="header">
         <h1 class="blind">ColaCola</h1>
-        <img src="./images/logo.png" alt="">
+        <img src="./images/logo.png" alt="콜라콜라로고">
     </header>
-    <main class="main">
-        <div class="wrapper">
-            <section class="vending-machine">
-                <ul class="menu">
-                    <li>
-                        <button>
-                            <img class="menu-items" src="./images/Original_Cola.png" alt="">
-                            <p class="menu-name">Original Cola</p>
-                            <p></p>
-                            <p class="menu-price">1000원</p>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <img class="menu-items" src="./images/Violet_Cola.png" alt="">
-                            <p class="menu-name">Violet Cola</p>
-                            <p class="menu-price">1000원</p>
-                            <img class="soldout" src="./images/Sold-out.png" alt="품절됐습니다">
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <img class="menu-items" src="./images/Yellow_Cola.png" alt="">
-                            <p class="menu-name">Yellow Cola</p>
-                            <p class="menu-price">1000원</p>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <img class="menu-items" src="./images/Cool_Cola.png" alt="">
-                            <p class="menu-name">Original Cola</p>
-                            <p class="menu-price">1000원</p>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <img class="menu-items" src="./images/Green_Cola.png" alt="">
-                            <p class="menu-name">Green Cola</p>
-                            <p class="menu-price">1000원</p>
-                        </button>
-                    </li>
-                    <li>
-                        <button>
-                            <img class="menu-items" src="./images/Orange_cola.png" alt="">
-                            <p class="menu-name">Orange Cola</p>
-                            <p class="menu-price">1000원</p>
-                        </button>
-                    </li>
-                </ul>
+    <article class="container">
+        <div class="vending-machine">
+            <ul class="menu">
+                <li>
+                    <button>
+                        <img class="menu-items" src="./images/Original_Cola.png" alt="">
+                        <p class="menu-name">Original Cola</p>
+                        <p></p>
+                        <p class="menu-price">1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img class="menu-items" src="./images/Violet_Cola.png" alt="">
+                        <p class="menu-name">Violet Cola</p>
+                        <p class="menu-price">1000원</p>
+                        <img class="soldout" src="./images/Sold-out.png" alt="품절됐습니다">
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img class="menu-items" src="./images/Yellow_Cola.png" alt="">
+                        <p class="menu-name">Yellow Cola</p>
+                        <p class="menu-price">1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img class="menu-items" src="./images/Cool_Cola.png" alt="">
+                        <p class="menu-name">Original Cola</p>
+                        <p class="menu-price">1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img class="menu-items" src="./images/Green_Cola.png" alt="">
+                        <p class="menu-name">Green Cola</p>
+                        <p class="menu-price">1000원</p>
+                    </button>
+                </li>
+                <li>
+                    <button>
+                        <img class="menu-items" src="./images/Orange_Cola.png" alt="">
+                        <p class="menu-name">Orange Cola</p>
+                        <p class="menu-price">1000원</p>
+                    </button>
+                </li>
+            </ul>
 
-                <div class="vending-machine-bottom-side">
-                    <div class="now-money">
-                        <div class="left left-money">
-                            <span class="left-money-text">잔액 :</span>
-                            <span class="left-money-money">1000원</span>
-                        </div>
-                        <button class="right change-return">
-                            거스름돈 반환
-                        </button>
+            <div class="vending-machine-bottom-side">
+                <div class="now-money">
+                    <div class="left left-money">
+                        <span class="left-money-text">잔액 :</span>
+                        <span class="left-money-money">1000원</span>
                     </div>
-                    
-                    <div class="input-money-box">
-                        <input type="text" placeholder="입금액 입력" class="left input-money-text">
-                        <button class="right input-money-button">입금</button>
-                    </div>
-                    
-                    <div class="my-picked-cola-cart">
-                        <div class="left cola-cart">
-                            <div class="picked-cola">
-                                <img class="picked-cola-img" src="./images/Original_Cola.png" alt="">
-                                <span class="picked-cola-name"> Original_Cola</span>
-                                <span class="cola-quantity">1</span>
-                            </div>
-                            <div class="picked-cola">
-                                <img class="picked-cola-img" src="./images/Green_Cola.png" alt="">
-                                <span class="picked-cola-name">Green_Cola</span>
-                                <span class="cola-quantity">1</span>
-                            </div>
-
-                            <div class="picked-cola">
-                                <img class="picked-cola-img" src="./images/Orange_Cola.png" alt="">
-                                <span class="picked-cola-name">Orange_Cola</span>
-                                <span class="cola-quantity">1</span>
-                            </div>
-                        </div>
-                        <button class="right get">획득</button>
-                    </div>
+                    <button class="right change-return">
+                        거스름돈 반환
+                    </button>
                 </div>
-                    
-                    
-            </section>
-
-            <section class="container-mypage">
-
-                <div class="mypage-my-money">
-                    <div class="my-money-box">
-                        <span class="my-pocket-money-text">소지금 :</span>
-                        <span class="my-pocket-money">25,000 원</span>
-                    </div>
+                
+                <div class="input-money-box">
+                    <input type="text" placeholder="입금액 입력" class="left input-money-text">
+                    <button class="right input-money-button">입금</button>
                 </div>
-
-                <div class="mypage-my-bag">
-                    <h2>획득한 음료</h2>
-                    <div class="my-bag-contents">
+                
+                <div class="my-picked-cola-cart">
+                    <div class="left cola-cart">
                         <div class="picked-cola">
                             <img class="picked-cola-img" src="./images/Original_Cola.png" alt="">
                             <span class="picked-cola-name"> Original_Cola</span>
@@ -129,17 +92,50 @@
                             <span class="picked-cola-name">Green_Cola</span>
                             <span class="cola-quantity">1</span>
                         </div>
+
                         <div class="picked-cola">
                             <img class="picked-cola-img" src="./images/Orange_Cola.png" alt="">
                             <span class="picked-cola-name">Orange_Cola</span>
                             <span class="cola-quantity">1</span>
                         </div>
                     </div>
-                    <p class="total-money">총금액 : 9,000원</p>
+                    <button class="right get">획득</button>
                 </div>
-            </section>
+            </div>
         </div>
-    </main>
+
+        <div class="container-mypage">
+
+            <div class="mypage-my-money">
+                <div class="my-money-box">
+                    <span class="my-pocket-money-text">소지금 :</span>
+                    <span class="my-pocket-money">25,000 원</span>
+                </div>
+            </div>
+
+            <div class="mypage-my-bag">
+                <h2>획득한 음료</h2>
+                <div class="my-bag-contents">
+                    <div class="picked-cola">
+                        <img class="picked-cola-img" src="./images/Original_Cola.png" alt="">
+                        <span class="picked-cola-name"> Original_Cola</span>
+                        <span class="cola-quantity">1</span>
+                    </div>
+                    <div class="picked-cola">
+                        <img class="picked-cola-img" src="./images/Green_Cola.png" alt="">
+                        <span class="picked-cola-name">Green_Cola</span>
+                        <span class="cola-quantity">1</span>
+                    </div>
+                    <div class="picked-cola">
+                        <img class="picked-cola-img" src="./images/Orange_Cola.png" alt="">
+                        <span class="picked-cola-name">Orange_Cola</span>
+                        <span class="cola-quantity">1</span>
+                    </div>
+                </div>
+                <p class="total-money">총금액 : 9,000원</p>
+            </div>
+        </div>
+    </article>
 </body>
 
 </html>
