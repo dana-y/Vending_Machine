@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 
-.blind {
+.ir {
   width: 1px;
   height: 1px;
   margin: -1px;
@@ -8,6 +8,7 @@
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 button {
   background-color: #fff;
   border: none;
