@@ -36,7 +36,6 @@ body {
 }
 .vending-machine, .my-info {
   width: 360px;
-  /* min-width: 360px; */
   box-sizing: border-box;
 }
 .vending-machine {
@@ -59,7 +58,6 @@ body {
   background-color: inherit;
   border-style: none;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
-  /* 위에 얘 왜 안되지? */
   border-radius: 10px;
 }
 .cola-button:active, .cola-button:focus {
