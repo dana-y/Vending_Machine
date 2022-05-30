@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/reset.css">
+    <link rel="stylesheet" href="./src/module.css">
+    <title>Vending Machine</title>
+</head>
+<body>
+  <!-- 상단 로고 레이아웃 시작 -->
+  <header class="header">
+    <h1>
+      <img src="./images/logo.svg" alt="colacola자판기" class="logo">
+    </h1>
+  </header>
+
+  <!-- 메인 레이아웃 시작 -->
+  <main class="main">
+    <div class="wrapper">
+
+      <!-- 왼쪽 section 레이아웃 시작 -->
+      <!-- 왼쪽 상단 레이아웃 시작 -->
+      <section class="vending-machine">
+        <h2 class="ir">자판기음료메뉴</h2>
+        <ul class="cola-menu">
+ 
+        </ul>
+        <!-- 왼쪽 하단 레이아웃 시작 -->
+        <section class="cont-buy">
+        <h2 class="ir">구입페이지</h2>
+        <div class="purple-bg left-money"><span>잔액:</span><strong id="left-money"  class="now-left-money">0 원</strong></div>
+        <button class="return-changes">거스름돈 반환</button>
+        <label><input class="input-money-txt" type="text" placeholder="입금액 입력"></label>
+        <button class="input-btn">입금</button>
+        
+        <div class="cola-cart cola-list">
+          <div class="picked-cola">
+            <img class="picked-cola-img" src="./images/Original_Cola.svg" alt="">
+            <span class="picked-cola-name"> Original_Cola</span>
+            <span class="cola-quantity">1</span>
+          </div>
+          <div class="picked-cola">
+              <img class="picked-cola-img" src="./images/Green_Cola.svg" alt="">
+              <span class="picked-cola-name">Green_Cola</span>
+              <span class="cola-quantity">2</span>
+          </div>
+          <div class="picked-cola">
+              <img class="picked-cola-img" src="./images/Orange_Cola.svg" alt="">
+              <span class="picked-cola-name">Orange_Cola</span>
+              <span class="cola-quantity">1</span>
+          </div>
+        </div>
+        
+        <button class="get-btn">획득</button>
+      </section>
+    </section>
+    <!-- 왼쪽 section 레이아웃 끝 -->
+    
+    <!-- 오른쪽 section 레이아웃 시작 -->
+    <section class="my-info">
+      <h2 class="ir">현재 내 정보입니다</h2>
+      <div class="my-money">
+        <div class="my-money-inner">
+          <span>소지금 :</span>
+          <strong>25,000 원</strong>
+        </div>
+      </div>
+      
+      <section class="mybag">
+        <h2 class="mybag-tit">획득한 음료</h2>
+        <div class="mybag-picked-cola cola-list">
+          <div class="picked-cola">
+            <img class="picked-cola-img" src="./images/Original_Cola.svg" alt="">
+            <span class="picked-cola-name"> Original_Cola</span>
+            <span class="cola-quantity">1</span>
+          </div>
+          <div class="picked-cola">
+            <img class="picked-cola-img" src="./images/Green_Cola.svg" alt="">
+            <span class="picked-cola-name">Green_Cola</span>
+            <span class="cola-quantity">2</span>
+          </div>
+          <div class="picked-cola">
+            <img class="picked-cola-img" src="./images/Orange_Cola.svg" alt="">
+            <span class="picked-cola-name">Orange_Cola</span>
+            <span class="cola-quantity">1</span>
+          </div>
+          <div class="picked-cola">
+            <img class="picked-cola-img" src="./images/Violet_Cola.svg" alt="">
+            <span class="picked-cola-name">Violet_Cola</span>
+            <span class="cola-quantity">5</span>
+          </div>
+        </div>
+        <strong class="total-price">총금액 : 9,000원</strong>
+      </section>
+    </section>
+    <!-- 오른쪽 section 레이아웃 끝 -->
+    </div>
+  </main>
+
+  <script>
+    //JSON setting
+    var requestURL = ''; // JSON 데이터 받아올 url
+    var request = new XMLHttpRequest();
+    request.open('GET', requestURL); // requestURL로 보냄
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function() {
+    var superHeroes = request.response;
+    populateHeader(superHeroes);
+    showHeroes(superHeroes);
+    }
+
+    // JSON에서 받아온 데이터
+    const drinks = [  
+      {
+        "name" : "Original_Cola",
+        "price" : 1000
+      }, 
+      {
+        "name" : "Violet_Cola",
+        "price" : 1000
+      }, 
+      {
+        "name" : "Yellow_Cola",
+        "price" : 1000
+      },
+      {
+        "name" : "Cool_Cola",
+        "price" : 1000
+      }, 
+      {
+        "name" : "Green_Cola",
+        "price" : 1000
+      }, 
+      {
+        "name" : "Orange_Cola",
+        "price" : 1000
+      }, 
+    ]
+
+
+    // 변수
+    const menu = document.querySelector(".cola-menu")
+    // 메뉴에 세팅
+    drinks.forEach((item) => {
+      const liElement = document.createElement("li");
+      const buttonElement = document.createElement("button");
+      const imgElement = document.createElement("img");
+      const strongElement = document.createElement("strong");
+      const spanElement = document.createElement("span");
+
+      imgElement.setAttribute("src", `./images/${item.name}.svg`);
+
+      strongElement.innerText = `${item.name}`
+      strongElement.classList.add("cola-btn-name");
+
+      spanElement.innerText = `${item.price}`;
+      spanElement.classList.add("cola-btn-price");
+
+      buttonElement.classList.add("cola-button")
+      buttonElement.appendChild(imgElement);
+      buttonElement.appendChild(strongElement);
+      buttonElement.appendChild(spanElement);
+
+      liElement.appendChild(buttonElement);
+      menu.appendChild(liElement);
+    })
+
+    //
+  </script>
+</body>
+</html>
