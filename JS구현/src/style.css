@@ -1,0 +1,258 @@
+.ir {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+button, input {
+  cursor: pointer;
+}
+
+/* 초기설정 끝 */
+
+body {
+  background-color: #EAE8FE;
+}
+
+/* 헤더 CSS 시작 */
+
+.header h1 {
+  text-align: center;
+}
+.logo {
+  width: 386px;
+}
+
+/* 메인 CSS 시작 */
+.main {
+  margin: 68px 0;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.vending-machine, .my-info {
+  width: 360px;
+  box-sizing: border-box;
+}
+.vending-machine {
+  padding: 31px 27px 28px;
+  background-color: white;
+}
+.cola-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+.cola-button {
+  width: 94px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 11px 11px 9px;
+  background-color: inherit;
+  border-style: none;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); 
+  border-radius: 10px;
+}
+.cola-button:active, .cola-button:focus {
+  outline: 3px solid #6327FE;
+  border-radius: 10px;
+}
+.cola-btn-name {
+  margin: 6px 0 7px;
+  font-size: 9px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  color: #333333;
+}
+.cola-btn-price {
+  width: 100%;
+  padding: 2.5px 0;
+  background-color: #6327FE;
+  border-radius: 50px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+/* 왼쪽 하단 CSS 시작 */
+.cont-buy {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
+  font-family: 'Noto Sans KR';
+  font-weight: 500;
+  font-size: 14px;
+}
+.left-money, .cola-cart{
+  background-color: #EAE8FE;
+}
+
+.left-money {
+  width: auto;
+  padding: 8px 10px;
+  padding-top: 8px;
+  border-radius: 5px;
+}
+.left-money strong {
+  float: right;
+}
+
+.return-changes, .input-btn {
+  background-color: #FFF;
+  border: none;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 6px 0 7px;
+}
+.input-money-txt {
+  width: 200px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 100%;
+  padding: 5px 5px 6px;
+}
+.input-money-txt, .cola-cart {
+  border: 1px solid #BDBDBD;
+}
+.cola-cart {
+  padding: 12px;
+  overflow-y: scroll;
+}
+.cola-cart, .get-btn {
+  height: 106px;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+.get-btn {
+  background: #6327FE;
+  color: #FFF;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  font-size: 13px;
+  border: 0;
+}
+
+/* 오른쪽 상단 CSS 시작 */
+.my-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.my-money {
+  background-color: #FFF;
+  padding: 9px 27px;
+}
+.my-money-inner {
+  padding: 6px 10px;
+  background-color: #EAE8FE;
+  border-radius: 5px;
+  /* font-family: 'Noto Sans KR'; */
+  font-weight: 500;
+  font-size: 14px;
+}
+.my-money-inner strong {
+  float: right;
+  font-weight: 700;
+}
+
+/* 오른쪽 하단 CSS 시작 */
+.mybag {
+  background-color: #FFF;
+  padding: 25px 27px 26px;
+}
+.mybag-tit {
+  font-family: 'Noto Sans KR';
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+}
+.mybag-picked-cola {
+  height: 364px;
+  background-color: #EAE8FE;
+  padding: 12px;
+  margin: 13px 0 6px;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+  overflow-y: scroll;
+}
+
+.total-price {
+  font-family: 'Noto Sans KR';
+  font-weight: 500;
+  font-size: 12px;
+  float: right;
+  margin-top: 6px;
+}
+
+/* cola-list 스크롤 CSS */
+.cola-list::-webkit-scrollbar {
+  width: 8px;
+}
+.cola-list::-webkit-scrollbar-thumb {
+  width: 4px;
+  height: 79px;
+  border-right: 4px solid #EAE8FE ; 
+  border-radius: 50px;
+  background-color: #FFFFFF;
+}
+.cola-list::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* 품절 CSS */
+.sold-out {
+  position: relative;
+  pointer-events: none;
+}
+.sold-out::before{
+  content: '';
+  position: absolute;
+  background: no-repeat center/ 60px 46px url('./images/품절.svg') rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+/* 반응형 CSS */
+@media only screen and (max-width: 480px) and (-webkit-min-device-pixel-ratio:2) {
+  body {
+    background-color: #FFF;
+  }
+  .logo {
+    width: 166px;
+  }
+  .main {
+    margin: 18px 0;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .vending-machine{
+    padding-bottom: 0;
+  }
+  .my-money{
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .mybag {
+    padding-top: 0;
+  }
+  .my-info {
+    gap: 40px;
+  }
+}
