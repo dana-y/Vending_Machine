@@ -74,19 +74,19 @@ var requestURL = ''; // JSON 데이터 받아올 url
     }
     
     // cola-cart용 drink 넣는 함수
-    const colaInCart = function(e, parent){
+    const makeColaInCart = function(name, parent){
       const count = 1;
 
       const liElement = document.createElement("li");
       liElement.classList.add("picked-cola")
 
       const imgElement = document.createElement("img");
-      imgElement.setAttribute("src", `./images/${e.name}.svg`);
+      imgElement.setAttribute("src", `./images/${name}.svg`);
       imgElement.classList.add("picked-cola-img");
       liElement.appendChild(imgElement);
 
       const strongElement = document.createElement("strong");
-      strongElement.innerText = `${e.name}`
+      strongElement.innerText = `${name}`
       strongElement.classList.add("picked-cola-name")
       liElement.appendChild(strongElement);
 
@@ -95,8 +95,8 @@ var requestURL = ''; // JSON 데이터 받아올 url
       spanElement.innerText = count;
       liElement.appendChild(spanElement);
       
-      liElement.classList.add("ir");
-      liElement.classList.add(e.name);
+      // liElement.classList.add("ir");
+      liElement.classList.add(name);
       parent.appendChild(liElement);
     }
 
@@ -112,26 +112,23 @@ var requestURL = ''; // JSON 데이터 받아올 url
       }
 
       picking () {
-        drinks.forEach((item) => {
-          colaInCart(item, colaCart);
-        });
+        
         const menuColas = menu.querySelectorAll("li");
-        const colasInCart = colaCart.querySelectorAll("li");
 
         menuColas.forEach(e => {
           e.addEventListener("click", e => {
 
+            const colasInCart = colaCart.querySelectorAll("li");
+
             const clickedColaName = e.target
-              .closest("button")
-              .querySelector("strong")
-              .innerText;
-
-            const cartColaClicked = colaCart.querySelector(`.${clickedColaName}`);
-
-            if(cartColaClicked.classList.contains("ir")){
-              cartColaClicked.classList.remove("ir");
+                  .closest("button")
+                  .querySelector("strong")
+                  .innerText;
+            const colaInCart = colaCart.querySelector(`.${clickedColaName}`);
+            if(!!colaInCart) {
+              colaInCart.querySelector("span").innerText++;
             } else {
-              cartColaClicked.querySelector("span").innerText++;
+              makeColaInCart(clickedColaName, colaCart);
             }
           });
 
