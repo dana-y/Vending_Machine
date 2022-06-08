@@ -42,7 +42,11 @@ var requestURL = ''; // JSON 데이터 받아올 url
     // 변수
     const colaCart = document.querySelector(".cola-cart");
     const menu = document.querySelector(".cola-menu");
-    const nowMoney = document.querySelector(".now-money");
+    let nowMoney = document.querySelector(".now-money strong").innerText;
+    nowMoney = 0;
+    
+    let nowMyMoney = 30000;
+    
 
     // drink 넣는 함수
     const makeDrink = function(addThisCola, parent){
@@ -100,7 +104,7 @@ var requestURL = ''; // JSON 데이터 받아올 url
       parent.appendChild(liElement);
     }
 
-    // 기능 넣는 클래스
+    // 자판기 기능구현 클래스
     class Manager {
       constructor (){
     
@@ -134,13 +138,32 @@ var requestURL = ''; // JSON 데이터 받아올 url
 
         })
       }
-
       putMoney () {
-        
+        const putBtn = document.querySelector(".input-btn");
+
+        putBtn.addEventListener("click", e => {
+          if(document.querySelector(".input-money-txt").value == ""){
+            window.alert("금액을 입력하쇼")
+          } else {
+
+            const nowInputMoney = +document.querySelector(".input-money-txt").value;
+            
+            nowMyMoney -= nowInputMoney;
+            nowMoney += nowInputMoney;
+            
+            document.querySelector(".my-pocket-money").innerText = nowMyMoney;
+            document.querySelector(".now-money strong").innerText = nowMoney;
+            document.querySelector(".input-money-txt").value = ""
+          }
+        })
       }
 
       changing() {
     
+      }
+
+      getCartCola() {
+
       }
     }
 
@@ -150,7 +173,6 @@ var requestURL = ''; // JSON 데이터 받아올 url
     // 기본 세팅
     manager.menuSetting();
     manager.picking();
-
-    // cola cart로
-    const colaButton = document.querySelectorAll(".cola-button");
-
+    manager.putMoney();
+    document.querySelector(".my-pocket-money").innerText = nowMyMoney;
+    document.querySelector(".now-money strong").innerText = nowMoney;

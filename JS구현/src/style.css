@@ -102,7 +102,7 @@ body {
   padding-top: 8px;
   border-radius: 5px;
 }
-.left-money strong {
+.left-money .now-money {
   float: right;
 }
 
@@ -160,7 +160,7 @@ body {
   font-weight: 500;
   font-size: 14px;
 }
-.my-money-inner strong {
+.my-money-inner span:nth-child(2) {
   float: right;
   font-weight: 700;
 }
