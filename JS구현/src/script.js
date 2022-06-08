@@ -44,9 +44,9 @@ var requestURL = ''; // JSON 데이터 받아올 url
     const menu = document.querySelector(".cola-menu");
     let nowMoney = document.querySelector(".now-money strong").innerText;
     nowMoney = 0;
-    
     let nowMyMoney = 30000;
     
+    const changBtn = document.querySelector(".return-changes")
 
     // drink 넣는 함수
     const makeDrink = function(addThisCola, parent){
@@ -143,7 +143,7 @@ var requestURL = ''; // JSON 데이터 받아올 url
 
         putBtn.addEventListener("click", e => {
           if(document.querySelector(".input-money-txt").value == ""){
-            window.alert("금액을 입력하쇼")
+            window.alert("입금 하실 금액을 입력하세요")
           } else {
 
             const nowInputMoney = +document.querySelector(".input-money-txt").value;
@@ -159,7 +159,18 @@ var requestURL = ''; // JSON 데이터 받아올 url
       }
 
       changing() {
-    
+        changBtn.addEventListener("click", () => {
+          if(nowMoney <= 0) {
+            window.alert("반환 할 돈이 없습니다.");
+          } else {
+
+            nowMyMoney += +nowMoney;
+            nowMoney = 0;
+
+            document.querySelector(".my-pocket-money").innerText = nowMyMoney;
+            document.querySelector(".now-money strong").innerText = nowMoney;
+          } 
+      })
       }
 
       getCartCola() {
@@ -174,5 +185,6 @@ var requestURL = ''; // JSON 데이터 받아올 url
     manager.menuSetting();
     manager.picking();
     manager.putMoney();
+    manager.changing();
     document.querySelector(".my-pocket-money").innerText = nowMyMoney;
     document.querySelector(".now-money strong").innerText = nowMoney;
